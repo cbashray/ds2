@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Bank Solutions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .qa-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .question {
+            font-weight: bold;
+            color: #2980b9;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .question-number {
+            background-color: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+        .solution {
+            padding-left: 15px;
+            border-left: 3px solid #2ecc71;
+            margin-top: 10px;
+            background-color: #fdfdfd;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+        }
+        .solution-label {
+            font-weight: bold;
+            color: #27ae60;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        /* Math specific stying could be handled better by MathJax, but we'll use simple styles for now */
+        .math-block {
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+            font-style: italic;
+        }
+    </style>
+    <!-- Include MathJax for rendering LaTeX math properly -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1>Question Bank Solutions</h1>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">1</span> State principle of inclusion and exclusion.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p>The principle of inclusion and exclusion provides a way to calculate the number of elements in the union of multiple sets.</p>
+            <p>For two sets $A$ and $B$: </p>
+            <div class="math-block">$$|A \cup B| = |A| + |B| - |A \cap B|$$</div>
+            <p>For $n$ sets $A_1, A_2, \dots, A_n$, it states: </p>
+            <div class="math-block"> $$ \left| \bigcup_{i=1}^n A_i \right| = \sum |A_i| - \sum_{i<j} |A_i \cap A_j| + \sum_{i<j<k} |A_i \cap A_j \cap A_k| - \dots + (-1)^{n-1} |A_1 \cap \dots \cap A_n| $$</div>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">2</span> What is a homogeneous recurrence relation? Give an example.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p><strong>Definition:</strong> A recurrence relation is called linear homogeneous if the right side of the expression is identically zero (it does not have any stand-alone function of $n$ or constants appended).</p>
+            <p><strong>Example:</strong> $a_n - 3a_{n-1} + 2a_{n-2} = 0$</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">3</span> Define first order and second order recurrence relations.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <ul>
+                <li><strong>First order:</strong> A relation where each term depends only on the immediately preceding term ($a_{n-1}$). Example: $a_n = 5a_{n-1} + 1$.</li>
+                <li><strong>Second order:</strong> A relation where each term depends on the two immediately preceding terms ($a_{n-1}$ and $a_{n-2}$). Example: $F_n = F_{n-1} + F_{n-2}$.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">4</span> What do you mean by isomorphism? Give examples of isomorphic graphs.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p><strong>Definition:</strong> Two graphs $G_1$ and $G_2$ are isomorphic if there exists a one-to-one mapping (bijection) between their vertex sets that preserves adjacency (i.e., if two vertices are connected in $G_1$, their corresponding mapped vertices must be connected in $G_2$, and vice versa).</p>
+            <p><strong>Example:</strong> A square plot $C_4$ drawn as a standard square and $C_4$ drawn as a diamond (or with crossed vertices re-labeled suitably). They represent the exact same graph structure.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">5 & 14</span> Define multigraph, null graph, induced subgraph, Complete graph.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <ul>
+                <li><strong>Multigraph:</strong> A graph that is permitted to have multiple edges (parallel edges) between the same pair of vertices.</li>
+                <li><strong>Null graph:</strong> A graph with no edges (an empty edge set).</li>
+                <li><strong>Induced subgraph:</strong> A subset of the vertices of a graph together with <em>any and all</em> edges whose endpoints are both in this subset.</li>
+                <li><strong>Complete graph:</strong> A simple graph in which every pair of distinct vertices is connected by a unique edge (denoted as $K_n$).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">6</span> Determine the integer solutions of $x_1 + x_2 + x_3 + x_4 + x_5 = 30$, where $x_1 \ge 2, x_2 \ge 3, x_3 \ge 4, x_4 \ge 2, x_5 \ge 0$.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p>Substitute $y_i$ such that $y_i \ge 0$:</p>
+             <p>$y_1 = x_1 - 2$, $y_2 = x_2 - 3$, $y_3 = x_3 - 4$, $y_4 = x_4 - 2$, $y_5 = x_5$.</p>
+             <p>Substitute them into the given formula:</p>
+             <p>$y_1 + 2 + y_2 + 3 + y_3 + 4 + y_4 + 2 + y_5 = 30$</p>
+             <p>$y_1 + y_2 + y_3 + y_4 + y_5 = 30 - 11 = 19$</p>
+             <p>Using the stars and bars method, the number of non-negative integer solutions is $\binom{n+r-1}{r-1}$:</p>
+             <p>$\binom{19 + 5 - 1}{5 - 1} = \binom{23}{4} = \frac{23 \times 22 \times 21 \times 20}{4 \times 3 \times 2 \times 1} = 8855$.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">7</span> Solve $a_{n+2} - 2a_{n+1} + a_n = 2^n$ with $a_0 = 2, a_1 = 1$ by using generating functions.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p>Let $G(x) = \sum_{n=0}^{\infty} a_n x^n$.</p>
+             <p>Rewrite equation for $n \ge 0$:  $a_{n} - 2a_{n-1} + a_{n-2} = 2^{n-2}$ (where $n \ge 2$).</p>
+             <p>Multiply by $x^n$ and sum from $n=2$ to $\infty$:</p>
+             <p>$G(x) - a_0 - a_1 x - 2x(G(x) - a_0) + x^2 G(x) = \sum_{n=2}^{\infty} 2^{n-2} x^n = x^2 \sum_{k=0}^{\infty} (2x)^k = \frac{x^2}{1-2x}$</p>
+             <p>Substitute initial values: $G(x)(1 - 2x + x^2) - 2 - x - 2x( -2 )= \frac{x^2}{1-2x}$</p>
+             <p>$G(x)(1-x)^2 - 2 + 3x = \frac{x^2}{1-2x}$</p>
+             <p>$G(x) = \frac{x^2}{(1-2x)(1-x)^2} + \frac{2-3x}{(1-x)^2} = \frac{2 - 7x + 7x^2}{(1-2x)(1-x)^2}$</p>
+             <p>Applying partial fractions: $\frac{2 - 7x + 7x^2}{(1-2x)(1-x)^2} = \frac{3}{1-x} - \frac{2}{(1-x)^2} + \frac{1}{1-2x}$</p>
+             <p>Using standard expansions:</p>
+             <p>$a_n = 3(1) - 2(n+1) + (2)^n = 2^n - 2n + 1$.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">8</span> Consider a Recurrence Relation $a_n = 2a_{n-1} - a_{n-2}$ for $n=2,3,4,\dots$ Is the sequence $\{a_n\}$ with $a_n = 2n$ a solution of the Recurrence Relation, Justify.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p>Check if $a_n = 2n$ works for $a_n = 2a_{n-1} - a_{n-2}$.</p>
+             <p>LHS ($n$-th term): $2n$</p>
+             <p>RHS: $2(2(n-1)) - 2(n-2) = 4n - 4 - 2n + 4 = 2n$.</p>
+             <p>Since LHS = RHS ($2n = 2n$), <strong>Yes</strong>, $\{a_n\} = 2n$ is a solution.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">9</span> Explain the concept of chromatic numbers with suitable examples.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p><strong>Concept:</strong> The minimum number of colors required to color the vertices of a graph such that no two adjacent vertices share the exact same color.</p>
+            <p><strong>Example:</strong> A standard triangle graph ($K_3$) requires exactly 3 colors since all vertices connect to each other. An even cycle graph ($C_4$) has a chromatic number of 2 since alternating colors works.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">10</span> Find the number of arrangements of the letters MISSISSIPPI.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p>Length = 11 letters. Counts: M:1, I:4, S:4, P:2.</p>
+            <div class="math-block">$$ \text{Number of permutations} = \frac{11!}{1! \times 4! \times 4! \times 2!} = \frac{39,916,800}{1 \times 24 \times 24 \times 2} = 34,650 $$</div>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">11</span> What is a non-homogeneous recurrence relation? Give an example.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p><strong>Definition:</strong> A relation $a_n = c_1 a_{n-1} + ... + c_k a_{n-k} + f(n)$ where $f(n)$ is <strong>not</strong> equal to zero. </p>
+            <p><strong>Example:</strong> $a_n = 3a_{n-1} + 2^n$.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">12</span> Find the recurrence relation and the initial condition for the sequence 2, 10, 50, 250, ...</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p>Notice that each term is exactly 5 times the previous term.</p>
+             <p><strong>Recurrence Relation:</strong> $a_n = 5a_{n-1}$ for $n \ge 1$.</p>
+             <p><strong>Initial condition:</strong> $a_0 = 2$.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">13</span> What is a planar graph? Give examples of planar and non-planar graphs.</div>
+        <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p><strong>Definition:</strong> A graph that can be drawn on a 2D plane in such a way that its edges intersect only at their endpoints (no edges crossing).</p>
+             <p><strong>Example of Planar:</strong> Any tree, Cycle graphs ($C_n$).</p>
+             <p><strong>Example of Non-Planar:</strong> Utility graph ($K_{3,3}$) or Complete 5-graph ($K_5$).</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">15</span> Determine the coefficient of $a^2b^3c^2d^5$ in the expansion of $(2a+b-4c+3d-7)^{16}$?</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p>The total sum of powers of the variables we need is $2+3+2+5 = 12$. Since the total exponent goes up to 16, the constant term $(-7)$ must take the remaining power of 4 ($16 - 12 = 4$).</p>
+             <p>Applying the Multinomial Theorem coefficient formula:</p>
+             <div class="math-block">$$ \frac{16!}{2! 3! 2! 5! 4!} \times (2)^2 \times (1)^3 \times (-4)^2 \times (3)^5 \times (-7)^4 $$</div>
+             <div class="math-block">$$ = \frac{16!}{2! 3! 2! 5! 4!} \times [4 \times 1 \times 16 \times 243 \times 2401] = \frac{16!}{2!3!2!5!4!} \times 37,340,352 $$</div>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">16</span> Solve the recurrence relation $F_n = F_{n-2} + F_{n-1}$ for $n \ge 0$, given $F_0 = 0, F_1 = 1$</div>
+        <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p><strong>Characteristic equation:</strong> $r^2 - r - 1 = 0$. Roots are $r = \frac{1 \pm \sqrt{5}}{2}$.</p>
+             <p>General solution: $F_n = c_1 \left(\frac{1+\sqrt{5}}{2}\right)^n + c_2 \left(\frac{1-\sqrt{5}}{2}\right)^n$</p>
+             <p>Apply initials ($F_0=0 \implies c_2 = -c_1$). ($F_1=1 \implies c_1 = \frac{1}{\sqrt{5}} $).</p>
+             <div class="math-block">$$ F_n = \frac{1}{\sqrt{5}} \left[ \left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n \right] $$</div>
+             <p>This is Binet's formula.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+         <div class="question"><span class="question-number">17</span> Solve $a_{n+2} - 5a_{n+1} + 6a_n = 0$, $a_0=1, a_1=1$ by using generating functions</div>
+         <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p>Let $G(x) = \sum_{n=0}^{\infty} a_n x^n$. Following standard GF operations:</p>
+              <p>$G(x)(1 - 5x + 6x^2) - a_0 - a_1x + 5a_0x = 0$</p>
+              <p>$G(x)(1 - 5x + 6x^2) - 1 - x + 5x = 0 \implies G(x) = \frac{1 - 4x}{(1-2x)(1-3x)}$</p>
+              <p>Applying Partial Fractions: $\frac{1-4x}{(1-2x)(1-3x)} = \frac{2}{1-2x} - \frac{1}{1-3x}$</p>
+              <p>Expanding into sequence: $a_n = 2(2^n) - 3^n \implies a_n = 2^{n+1} - 3^n$.</p>
+         </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">18</span> Verify whether the following two graphs are isomorphic or not.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+            <p><strong>Observation:</strong></p>
+             <ol>
+                 <li>Look closely at the adjacent nodes on the crossing lines. The graph on the left has vertices partitioned into two distinct sets $\{a, c, e\}$ and $\{b, d, f\}$ where no two edges connect members of the same set (it contains NO triangles, it is an inherently Bipartite Graph, essentially a modified 6-cycle with chords).</li>
+                 <li>The graph on the right visibly contains triangles (For example, $c$, $b$, and $d$ form a triangle $C_3$ if you trace the top edges directly attached).</li>
+             </ol>
+             <p>A bipartite graph cannot be isomorphic to a graph containing an odd cycle (a triangle). </p>
+             <p><strong>Answer: NOT Isomorphic.</strong></p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">19 & 24</span> Find the value of n, if $2nC_3 : nC_3 = 44 : 3$.</div>
+        <div class="solution">
+            <span class="solution-label">Solution:</span>
+             <p>Equation: ${}^{2n}C_3 : {}^nC_3 = 44 : 3$</p>
+             <div class="math-block">$$ \frac{\frac{2n(2n-1)(2n-2)}{3!}}{\frac{n(n-1)(n-2)}{3!}} = \frac{44}{3} $$</div>
+             <div class="math-block">$$ \implies \frac{2n \cdot (2n-1) \cdot 2(n-1)}{n \cdot (n-1) \cdot (n-2)} = \frac{44}{3} $$</div>
+             <div class="math-block">$$ \implies 4 \frac{2n-1}{n-2} = \frac{44}{3} \implies \frac{2n-1}{n-2} = \frac{11}{3} \implies 6n - 3 = 11n - 22 \implies 5n = 19 \implies n = 3.8 $$</div>
+             <p><em>(Note: Combinatorics strictly accept positive integers, which means there is a typo in the provided question paper. By standard textbook problem conventions, if it was actually ${}^{2n}C_3 : {}^nC_2 = 44:3$, it would give exactly $n=6$.)</em></p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">20 & 25</span> Find the generating function of the sequence 1, -2, 3, -4, 5, -6 ...</div>
+        <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p>General term is $a_n = (n+1)(-1)^n$.</p>
+             <p>We know the expansion for $\frac{1}{(1-x)^2} = 1 + 2x + 3x^2 + 4x^3 + \dots$</p>
+             <p>Substitute $x$ with $-x$:</p>
+             <p>$\frac{1}{(1+x)^2} = 1 - 2x + 3x^2 - 4x^3 \dots$</p>
+             <p><strong>Answer:</strong> The generating function is $G(x) = \frac{1}{(1+x)^2}$.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+         <div class="question"><span class="question-number">21 & 26</span> Find the co efficient of $x^5$ in expansion of $(2-x+3x^2)^6$</div>
+         <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p>Using the multinomial theorem, terms are of the form $\frac{6!}{i! j! k!} 2^i (-x)^j (3x^2)^k$ where subsets $(i+j+k=6)$.</p>
+              <p>We want the power of $x$ to be 5, so $j + 2k = 5$. Valid $(j,k)$ pairs are:</p>
+              <ul>
+                  <li>$k=0 \implies j=5 \implies i=1$. Term = $\frac{6!}{1! 5! 0!} (2^1) (-1)^5 (3^0) = 6 \times 2 \times (-1) = -12$</li>
+                  <li>$k=1 \implies j=3 \implies i=2$. Term = $\frac{6!}{2! 3! 1!} (2^2) (-1)^3 (3^1) = 60 \times 4 \times (-1) \times 3 = -720$</li>
+                  <li>$k=2 \implies j=1 \implies i=3$. Term = $\frac{6!}{3! 1! 2!} (2^3) (-1)^1 (3^2) = 60 \times 8 \times (-1) \times 9 = -4320$</li>
+              </ul>
+              <p><strong>Total Coefficient</strong> $= -12 - 720 - 4320 = -5052$.</p>
+         </div>
+    </div>
+
+    <div class="qa-container">
+         <div class="question"><span class="question-number">22 & 27</span> Define regular graph and Bipartite graph.</div>
+         <div class="solution">
+              <span class="solution-label">Solution:</span>
+              <ul>
+                  <li><strong>Regular graph:</strong> A graph where every vertex has the exact same degree (number of connecting edges).</li>
+                  <li><strong>Bipartite graph:</strong> A graph whose vertices can be divided into two disjoint sets $U$ and $V$ such that every edge connects a vertex in $U$ to one in $V$ (no edges connect vertices within the same set).</li>
+              </ul>
+         </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">23 & 28</span> Write the preorder, and postorder traversal for given tree.</div>
+        <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p>Based on the provided binary tree:</p>
+             <ul>
+                 <li><strong>Preorder Traversal (Root, Left, Right):</strong> <code>a, b, d, e, f, g, c</code></li>
+                 <li><strong>Postorder Traversal (Left, Right, Root):</strong> <code>d, f, g, e, b, c, a</code></li>
+             </ul>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">29</span> If the number of different words can be formed with the letters of the word "HARYANA" is 840 ways then how many of these:
+            <ol type="a">
+                <li>Have H and N together</li>
+                <li>Begin with H and end with N</li>
+                <li>Have 3 vowels together</li>
+            </ol>
+        </div>
+        <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p>The word "HARYANA" contains 7 letters (H-1, A-3, R-1, Y-1, N-1).</p>
+             <ol type="a">
+                 <li><strong>Have H and N together:</strong> Treat (HN) as a single unit. We now have 6 units to arrange: (HN), A, A, A, R, Y. Number of arrangements = $\frac{6!}{3!} = 120$. Since (HN) can be ordered internally in $2!$ ways (HN or NH), the total is $120 \times 2 = \mathbf{240}$ <strong>ways</strong>.</li>
+                 <li><strong>Begin with H and end with N:</strong> Format: <code>H _ _ _ _ _ N</code>. The 5 remaining blanks are filled by A, A, A, R, Y. The number of arrangements is $\frac{5!}{3!} = \frac{120}{6} = \mathbf{20}$ <strong>ways</strong>.</li>
+                 <li><strong>Have 3 vowels together:</strong> Treat the 3 A's (AAA) as a single unit. There are 5 units to arrange: (AAA), H, R, Y, N. Since all letters involved are now distinct from each other, the arrangements are $5! = \mathbf{120}$ <strong>ways</strong>. (The 3 A's arranged among themselves is just 1 way since they are identical).</li>
+             </ol>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">30</span> Solve the recurrence relation using generating function $u_{n+2} - 2u_{n+1} + u_n = 0$ where $u_0 = 2$ and $u_1 = 1$.</div>
+        <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p>Let $G(x) = \sum_{n=0}^{\infty} u_n x^n$. Following standard Generating Function operations:</p>
+             <p>$G(x)(1 - 2x + x^2) - u_0 - u_1 x + 2x u_0 = 0$</p>
+             <p>Substitute $u_0 = 2$ and $u_1 = 1$:</p>
+             <p>$G(x)(1-x)^2 - 2 - x + 4x = 0$</p>
+             <p>$G(x)(1-x)^2 = 2 - 3x \implies G(x) = \frac{2 - 3x}{(1-x)^2}$</p>
+             <p>Rewrite using partial fractions: $\frac{2 - 3x}{(1-x)^2} = \frac{3(1-x) - 1}{(1-x)^2} = \frac{3}{1-x} - \frac{1}{(1-x)^2}$</p>
+             <p>Expanding into a sequence using standard series: $u_n = 3(1) - 1(n+1)$</p>
+             <p><strong>$u_n = 2 - n$</strong></p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">31</span> Explain about graph colouring? and find the chromatic number of the given graph.</div>
+        <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p><strong>Graph Coloring:</strong> Graph coloring refers to assigning colors to the vertices of a graph such that no two adjacent vertices (vertices connected directly by an edge) share the same color. The <em>Chromatic Number</em> ($\chi(G)$) is the minimum number of colors needed.</p>
+             <p><strong>Chromatic Number of the given graph:</strong></p>
+             <p>Let's map the colors assigned:</p>
+             <ul>
+                 <li>We have a triangle formed by <code>a</code>, <code>b</code>, and <code>e</code>. A triangle requires 3 unique colors. Let's say: <code>a = Red</code>, <code>b = Blue</code>, <code>e = Green</code>.</li>
+                 <li><code>d</code> is connected to <code>a(Red)</code> and <code>b(Blue)</code>. Due to the triangle <code>a-b-d</code>, <code>d</code> must be <code>Green</code>.</li>
+                 <li><code>c</code> is connected to <code>a(Red)</code> and <code>e(Green)</code>. So <code>c</code> must be <code>Blue</code>.</li>
+                 <li><code>f</code> is connected to <code>b(Blue)</code>, <code>e(Green)</code>, and <code>d(Green)</code>. So <code>f</code> must be <code>Red</code>.</li>
+             </ul>
+             <p>All vertices can be colored without conflict using just 3 colors (Red, Blue, Green). Thus, the <strong>Chromatic Number is 3</strong>.</p>
+        </div>
+    </div>
+
+    <div class="qa-container">
+        <div class="question"><span class="question-number">32</span> Find the length of a shortest path between a and z in the given weighted graph using Dijkstra's algorithm.</div>
+        <div class="solution">
+             <span class="solution-label">Solution:</span>
+             <p>Applying Dijkstra's algorithm starting from vertex <strong>a</strong>:</p>
+             <ul>
+                 <li><strong>Initial:</strong> <code>a=0</code>, all others $\infty$</li>
+                 <li><strong>Step 1 (from a):</strong> Update neighbors of <code>a</code>: <code>b = 2</code>, <code>c = 3</code>. Shortest unvisited is <code>b(2)</code>.</li>
+                 <li><strong>Step 2 (from b):</strong> Update neighbors of <code>b</code>: <code>d = 2(dist to b) + 5 = 7</code>. <code>e = 2(dist to b) + 2 = 4</code>. Shortest unvisited is <code>c(3)</code>.</li>
+                 <li><strong>Step 3 (from c):</strong> Update neighbors of <code>c</code>: <code>e = 3 + 5 = 8</code>. Since 8 > 4, we keep <code>e = 4</code>. Shortest unvisited is <code>e(4)</code>.</li>
+                 <li><strong>Step 4 (from e):</strong> Update neighbors of <code>e</code>: <code>d = 4 + 1 = 5</code> (replaces 7). <code>z = 4 + 4 = 8</code>. Shortest unvisited is <code>d(5)</code>.</li>
+                 <li><strong>Step 5 (from d):</strong> Update neighbors of <code>d</code>: <code>z = 5(dist to d) + 2 = 7</code> (replaces 8).</li>
+             </ul>
+             <p>The shortest distance to <strong>z is 7</strong>.</p>
+             <p>The shortest path is: <strong>a &rarr; b &rarr; e &rarr; d &rarr; z</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>
